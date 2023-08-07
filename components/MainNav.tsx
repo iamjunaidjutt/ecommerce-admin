@@ -17,10 +17,15 @@ export function MainNav({
 
     const routes = [
         {
+            href: `/${storeId}`,
+            label: "Dashboard",
+            isAcitve: pathName === `/${storeId}`
+        },
+        {
             href: `/${storeId}/settings`,
             label: "Settings",
             isAcitve: pathName === `/${storeId}/settings`
-        }
+        },
     ]
     
     return (
@@ -32,7 +37,7 @@ export function MainNav({
                     <Link
                         key={href}
                         href={href}
-                        className={cn( "text-sm font-medium transition-colors hover:text-primary", isAcitve ? "text-black dark:text-white" : "text-muted-foreground dark:text-muted-background")}
+                        className={cn( "text-sm font-medium transition-colors hover:text-primary mx-3", isAcitve ? "text-black dark:text-white" : "text-muted-foreground dark:text-muted-background")}
                     >
                         {label}                   
                     </Link>
