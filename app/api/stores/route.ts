@@ -10,7 +10,7 @@ export async function POST(req: Request) {
         const { name } = body;
 
         if (!userId) {
-            return NextResponse.json({message: "Unauthorized"}, { status: 401 });
+            return NextResponse.json({message: "Unauthenticated"}, { status: 401 });
         }
 
         if (!name) {
@@ -24,7 +24,7 @@ export async function POST(req: Request) {
             },
         });
         
-        return NextResponse.json(store);
+        return NextResponse.json(store, { status: 201 });
     } catch (error) {
         console.log("[STORES_POST] Error: ", error);
         return NextResponse.json({message: "Internal server error"}, { status: 500 });

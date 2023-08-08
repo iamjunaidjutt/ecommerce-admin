@@ -22,6 +22,16 @@ export function MainNav({
             isAcitve: pathName === `/${storeId}`
         },
         {
+            href: `/${storeId}/billboards`,
+            label: "Billboards",
+            isAcitve: pathName === `/${storeId}/billboards`
+        },
+        {
+            href: `/${storeId}/categories`,
+            label: "Categories",
+            isAcitve: pathName === `/${storeId}/categories`
+        },
+        {
             href: `/${storeId}/settings`,
             label: "Settings",
             isAcitve: pathName === `/${storeId}/settings`

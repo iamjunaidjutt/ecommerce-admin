@@ -14,7 +14,7 @@ export async function PATCH(
         const { name } = body;
 
         if (!userId) {
-            return new NextResponse("Unauthorized", { status: 401 });
+            return new NextResponse("Unauthenticated", { status: 401 });
         }
 
         if (!name) {
@@ -37,7 +37,7 @@ export async function PATCH(
             }
         });
 
-        return NextResponse.json(store);
+        return NextResponse.json(store, { status: 201});
     } catch (error) {
         console.log("[Stores_StoreId_PATCH] Error: ", error);
         return new NextResponse("Internal error", { status: 500 })
@@ -53,7 +53,7 @@ export async function DELETE(
         const { userId } = auth();
 
         if (!userId) {
-            return new NextResponse("Unauthorized", { status: 401 });
+            return new NextResponse("Unauthenticated", { status: 401 });
         }
 
         const { storeId } = params; 
