@@ -42,6 +42,11 @@ export function MainNav({
             isAcitve: pathName === `/${storeId}/colors`
         },
         {
+            href: `/${storeId}/products`,
+            label: "Products",
+            isAcitve: pathName === `/${storeId}/products`
+        },
+        {
             href: `/${storeId}/settings`,
             label: "Settings",
             isAcitve: pathName === `/${storeId}/settings`
