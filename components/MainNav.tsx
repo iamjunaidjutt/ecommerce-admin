@@ -47,6 +47,11 @@ export function MainNav({
             isAcitve: pathName === `/${storeId}/products`
         },
         {
+            href: `/${storeId}/orders`,
+            label: "Orders",
+            isAcitve: pathName === `/${storeId}/orders`
+        },
+        {
             href: `/${storeId}/settings`,
             label: "Settings",
             isAcitve: pathName === `/${storeId}/settings`
